@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .auth-container {
+    @apply min-h-screen flex items-center justify-start px-4 py-10 lg:px-16 relative bg-cover bg-center bg-no-repeat;;
+  }
+
+  .auth-container::before {
+    content: "";
+    @apply absolute inset-0;
+    background-color: rgba(0, 0, 0, 0.14);
+  }
+
+  .auth-form-section {
+    @apply relative z-10 rounded-[22px] bg-white/95 border border-white/60 backdrop-blur-sm;
+    width: 524px;
+    max-width: 524px;
+    padding: 52px;
+    margin-left: 5%;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+  }
+
+  .auth-image-section {
+    @apply hidden;
+  }
+
+  .auth-logo {
+    @apply w-32 h-auto mx-auto mb-8;
+  }
+
+  .auth-title {
+    @apply text-2xl sm:text-3xl font-bold text-gray-900 mb-2 text-center;
+  }
+
+  .auth-subtitle {
+    @apply text-sm sm:text-base text-gray-600 mb-6 text-center;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition;
+  }
+
+  .form-input:focus {
+    --tw-ring-color: rgb(198, 40, 40);
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-gray-700 mb-2;
+  }
+
+  .btn-primary {
+    @apply w-full px-4 py-3 text-white font-bold rounded-lg transition transform hover:-translate-y-0.5;
+    background-color: rgb(198, 40, 40);
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(160, 24, 24);
+  }
+
+  .btn-secondary {
+    @apply w-full px-4 py-3 bg-gray-200 text-gray-900 font-bold rounded-lg hover:bg-gray-300 transition;
+  }
+
+  .btn-outline {
+    @apply w-full px-4 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition flex items-center justify-center gap-2;
+  }
+
+  .link-text {
+    @apply font-semibold hover:underline;
+    color: rgb(198, 40, 40);
+  }
+
+  .error-message {
+    @apply text-sm mb-4;
+    color: rgb(198, 40, 40);
+  }
+
+  .success-message {
+    @apply text-green-600 text-sm mb-4;
+  }
+
+  .otp-input-container {
+    @apply flex gap-2 justify-center mb-6;
+  }
+
+  .otp-input {
+    @apply w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2;
+  }
+
+  .otp-input:focus {
+    border-color: rgb(198, 40, 40);
+    --tw-ring-color: rgb(198, 40, 40);
+  }
+
+  .remember-me {
+    @apply flex items-center gap-2 text-sm text-gray-700;
+  }
+
+  .form-group {
+    @apply mb-4;
+  }
+
+  .divider-line {
+    @apply flex items-center gap-3 my-6;
+  }
+
+  .divider-line-text {
+    @apply text-sm text-gray-600;
+  }
+}
