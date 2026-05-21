@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+*{
+  font-family: inter,sans-serif;
+}
 @layer base {
   * {
     box-sizing: border-box;
@@ -112,5 +114,98 @@
 
   .divider-line-text {
     @apply text-sm text-gray-600;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-gray-500;
+  }
+
+  .page-heading {
+    @apply text-3xl font-semibold;
+  }
+
+  .health-log-row {
+    @apply flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pb-3;
+  }
+
+  .health-log-panel {
+    @apply bg-white rounded-[12px] border border-gray-200 shadow-sm p-6;
+  }
+
+  .health-log-empty {
+    @apply min-h-[260px] flex items-center justify-center text-center;
+  }
+
+  .health-log-grid {
+    @apply grid gap-4;
+  }
+
+  .health-log-card {
+    @apply rounded-[12px] border border-gray-300 p-5 shadow-sm;
+  }
+
+  .health-log-card-row {
+    @apply flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between;
+  }
+
+  .health-log-card-badge {
+    @apply rounded-full bg-red-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white;
+  }
+
+  .health-log-card-section {
+    @apply rounded-[24px] bg-white p-4 border border-gray-200;
+  }
+
+  .health-log-modal-overlay {
+    @apply fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/40 p-4;
+
+  }
+
+  .health-log-modal {
+    @apply relative w-full max-w-xl rounded-[20px] bg-white px-6 py-7 shadow-2xl my-8;
+  }
+
+  .health-log-modal-close {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200;
+  }
+
+  .health-log-form {
+    @apply space-y-5;
+  }
+
+  .health-log-feeling-group {
+    @apply flex flex-wrap gap-2 rounded-3xl border border-gray-200 bg-white p-3;
+  }
+
+  .health-log-feeling-pill {
+    @apply rounded-full border px-4 py-2 text-sm font-medium transition;
+  }
+
+  .health-log-feeling-pill.active {
+    @apply border-red-600 bg-red-50 text-red-700;
+  }
+
+  .health-log-feeling-pill.inactive {
+    @apply border-gray-200 bg-white text-gray-700 hover:border-gray-300;
+  }
+
+  .health-log-images-grid {
+    @apply mt-3 grid gap-3 sm:grid-cols-3;
+  }
+
+  .health-log-image-card {
+    @apply relative overflow-hidden rounded-[26px] border border-gray-200 bg-white;
+  }
+
+  .health-log-image {
+    @apply h-32 w-full object-cover;
+  }
+
+  .health-log-image-remove {
+    @apply absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-sm font-bold text-red-600 shadow-sm transition hover:bg-red-100;
+  }
+
+  .health-log-image-meta {
+    @apply border-t border-gray-200 bg-gray-50 px-3 py-2 text-xs text-gray-600;
   }
 }

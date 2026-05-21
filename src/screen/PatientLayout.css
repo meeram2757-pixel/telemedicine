@@ -29,13 +29,13 @@
 }
 
 .sidebar-logo {
-  height: 50px;
+  height: 100px;
   object-fit: contain;
 }
 
 .sidebar-menu {
   flex: 1;
-  padding: 15px 0;
+  padding: 15px 0 0 16px;
   display: flex;
   flex-direction: column;
 }
@@ -49,11 +49,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #333;
-  font-size: 14px;
+  /* color: rgba(26, 26, 26, 26); */
+  color: rgb(0, 0, 0);
+  font-size: 16px;
   font-weight: 500;
   transition: all 0.2s ease;
   text-align: left;
+  border-radius: 10px;
+
 }
 
 .menu-item:hover {
@@ -128,9 +131,10 @@
 }
 
 .welcome-text {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: #333;
+  /* font-family: inter,sans-serif; */
 }
 
 .header-actions {

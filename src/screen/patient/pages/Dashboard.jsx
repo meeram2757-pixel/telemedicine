@@ -1,51 +1,31 @@
-import { useEffect, useState } from "react";
-import { apiCallWithAuth } from "../../../api/client";
-import API_URLS from "../../../utils/apiUrls";
+import { BoltIcon,ChatIcon,PillIcon,DoctorIcon } from "../../../components/Icons";
 
 const Dashboard = () => {
-  const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProfile = async () => {
-      const response = await apiCallWithAuth(API_URLS.GET_PROFILE, "GET");
-      if (response.success) {
-        setProfile(response.data);
-      }
-      setLoading(false);
-    };
-    fetchProfile();
-  }, []);
-
   return (
     <div>
-      <h1 className="mb-8">
-        Welcome back, {profile?.firstName || "Patient"} 👋
-      </h1>
-
       {/* Quick Actions */}
       <section className="mb-8">
-        <h2 className="text-xl font-bold mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="text-white p-6 rounded-lg cursor-pointer hover:shadow-lg transition" style={{ backgroundColor: "rgb(198, 40, 40)" }}>
-            <div className="text-3xl mb-3">🏥</div>
-            <h3 className="font-bold text-lg">Start Triage</h3>
-            <p className="text-sm mt-2">Check your symptoms with smart health AI</p>
+        <h2 className="text-2xl font-bold mb-4">Quick Actions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-sky-50 p-6 rounded-[15px] cursor-pointer hover:shadow-lg transition" style={{ backgroundColor: "rgb(198, 40, 40)" }}>
+            <div className="text-3xl mb-3"><BoltIcon className="h-5 w-5" /></div>
+            <h3 className="text-[22px]">Start Triage</h3>
+            <p className="text-[16px] mt-2">Check your symptoms with smart health AI</p>
           </div>
-          <div className="bg-yellow-500 text-white p-6 rounded-lg cursor-pointer hover:shadow-lg transition">
-            <div className="text-3xl mb-3">👨‍⚕️</div>
-            <h3 className="font-bold text-lg">Book Doctor</h3>
-            <p className="text-sm mt-2">Find and book top specialists instantly</p>
+          <div className="bg-yellow-500 text-sky-50 p-6 rounded-[15px] cursor-pointer hover:shadow-lg transition">
+            <div className="text-3xl mb-3"><DoctorIcon className="h-5 w-5" /></div>
+            <h3 className="text-[22px]">Book Doctor</h3>
+            <p className="text-[16px] mt-2">Find and book top specialists instantly</p>
           </div>
-          <div className="bg-blue-600 text-white p-6 rounded-lg cursor-pointer hover:shadow-lg transition">
-            <div className="text-3xl mb-3">💬</div>
-            <h3 className="font-bold text-lg">Messages</h3>
-            <p className="text-sm mt-2">Chat securely with your doctor</p>
+          <div className="bg-blue-400 text-sky-50 p-6 rounded-[15px] cursor-pointer hover:shadow-lg transition">
+            <div className="text-3xl mb-3"> <ChatIcon className="h-5 w-5" /></div>
+            <h3 className="text-[22px]">Messages</h3>
+            <p className="text-[16px] mt-2">Chat securely with your doctor</p>
           </div>
-          <div className="bg-green-600 text-white p-6 rounded-lg cursor-pointer hover:shadow-lg transition">
-            <div className="text-3xl mb-3">💊</div>
-            <h3 className="font-bold text-lg">Prescriptions</h3>
-            <p className="text-sm mt-2">Access your doctor's prescriptions in one place.</p>
+          <div className="bg-green-500 text-sky-50 p-6 rounded-[15px] cursor-pointer hover:shadow-lg transition">
+            <div className="text-3xl mb-3"><PillIcon className="h-5 w-5" /></div>
+            <h3 className="text-[22px]">Prescriptions</h3>
+            <p className="text-[16px] mt-2">Access your doctor's prescriptions in one place.</p>
           </div>
         </div>
       </section>

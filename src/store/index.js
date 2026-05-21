@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice";
-import { loadAuthState, saveAuthState } from "../utils/localStorage";
+import healthLogsReducer from "./healthLogsSlice";
+import { loadAuthState, saveAuthState, loadHealthLogsState, saveHealthLogsState } from "../utils/localStorage";
 
 const preloadedState = {
   auth: loadAuthState() || {
@@ -9,15 +10,22 @@ const preloadedState = {
     role: null,
     isProfileSetup: false,
   },
+  healthLogs: loadHealthLogsState() || {
+    logs: [],
+    status: "idle",
+    error: null,
+  },
 };
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    healthLogs: healthLogsReducer,
   },
   preloadedState,
 });
 
 store.subscribe(() => {
   saveAuthState(store.getState().auth);
+  saveHealthLogsState(store.getState().healthLogs);
 });
